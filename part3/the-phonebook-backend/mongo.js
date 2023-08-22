@@ -16,7 +16,7 @@ if (argsLen != 3 && argsLen !== 5){
 
 const pass = process.argv[2]
 
-const url = `mongodb+srv://pb:${pass}@phonebookdb.nwzuq6n.mongodb.net/Phonebook?retryWrites=true&w=majority`
+const url = `mongodb+srv://fullstackopen:${password}@phonebookdb.kpwkwxw.mongodb.net/?retryWrites=true&w=majority`
 
 mongoose.set('strictQuery', false)
 mongoose.connect(url)
