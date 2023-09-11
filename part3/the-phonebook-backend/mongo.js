@@ -15,8 +15,9 @@ if (argsLen != 3 && argsLen !== 5){
 }
 
 const pass = process.argv[2]
+const encoded = encodeURIComponent(pass)
 
-const url = `mongodb+srv://fullstackopen:${pass}@phonebookdb.kpwkwxw.mongodb.net/?retryWrites=true&w=majority`
+const url = `mongodb+srv://fullstackopen:${encoded}@phonebookdb.kpwkwxw.mongodb.net/?retryWrites=true&w=majority`
 
 mongoose.set('strictQuery', false)
 mongoose.connect(url)
