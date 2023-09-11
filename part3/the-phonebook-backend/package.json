@@ -7,7 +7,7 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:ui": "rm -rf build && cd D:/FSO2023/Learning/React/partX/the-phonebook && npm run build && cp -r build D:/FSO2023/FullStackOpen2023/part3/phonebook-backend",
+    "build:ui": "rm -rf build && cd D:/FSO2023/Learning/React/partX/the-phonebook && npm run build && cp -r build D:/FSO2023/FullStackOpen2023/part3/the-phonebook-backend",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
   },
   "author": "CousTov",
