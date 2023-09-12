@@ -21,7 +21,9 @@ let persons = [
 ]
 
 app.get('/api/persons', (request, response) => {
-    response.json(persons)
+    Person.find({}).then(p => {
+        response.json(p)
+    })
 })
 
 app.get('/api/info', (request, response) => {
@@ -44,6 +46,23 @@ app.delete('/api/persons/:id', (request, response) => {
 
     response.status(204).end()
 })
+
+app.post('/api/persons', (request, response) => {
+    const body = request.body
+  
+    if (body.name === undefined && body.number === undefined) {
+      return response.status(400).json({ error: 'Content missing' })
+    }
+  
+    const person = new Person({
+      name: body.name,
+      number: body.number
+    })
+  
+    person.save().then(savedNote => {
+      response.json(savedNote)
+    })
+  })
 
 const generateId = () => {
     const maxId = persons.length > 0
